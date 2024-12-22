@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "777ab582-f2dd-4769-8897-8b5e718fc730",
+		"name": "MediaApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40561567"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Lady\",\n    \"email\": \"lady@example.com\",\n    \"password\": \"wolf@123\",\n    \"role\": \"Editor\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"lady@example.com\",\n  \"password\": \"wolf@123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "Articles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/articles"
+					},
+					"response": []
+				},
+				{
+					"name": "Article by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/articles/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Tech Trends 2024\",\n    \"content\": \"The latest trends in technology for the upcoming year.\",\n    \"media_url\": \"https://example.com/tech-trends-2024\",\n    \"section\": \"Medium\",\n    \"approved_by\": 1,\n    \"status\": \"Approved\",\n    \"primary_contributor_id\": 4\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Tech Trends 2025\",\n    \"content\": \"The latest trends in technology for the upcoming year.\",\n    \"media_url\": \"https://example.com/tech-trends-2025\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{localhost}}/articles/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Approve article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{localhost}}/articles/2/approve"
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{localhost}}/articles/2/reject"
+					},
+					"response": []
+				},
+				{
+					"name": "Comments for Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/articles/1/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Reactions of Article",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles/1/reactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Reaction to Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reaction\": {\n    \"reaction_type\": \"Like\"\n  }\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles/1/reactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Comment to Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\": {\n    \"content\": \"This is useful for many youngsters!\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles/1/comments"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Update Comment to Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\": {\n    \"content\": \"This is useful for many Youth!\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles/1/comments/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment for Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{localhost}}/articles/1/comments/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reaction for Comment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/articles/1/comments/1/reactions"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Reaction to Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "{{localhost}}/articles/2/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Reaction to Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NTk2NjZ9.4ZidcarRP_IdTaIAJk1f5cJtRypoC09s3AiZ2Aia3w8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{localhost}}/articles/1/comments/1/reactions/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Section",
+			"item": [
+				{
+					"name": "Sections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/sections"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NjUzMTN9.IhOo8P5tfTZDu7aMuAuTMfssewQTqokNdKhSeUdyFPA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"section\" :{\n        \"name\" : \"Food\",\n        \"dimensions\" : \"Width: 100px, Height: 300px\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/sections"
+					},
+					"response": []
+				},
+				{
+					"name": "Section by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NjUzMTN9.IhOo8P5tfTZDu7aMuAuTMfssewQTqokNdKhSeUdyFPA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{localhost}}/sections/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NjUzMTN9.IhOo8P5tfTZDu7aMuAuTMfssewQTqokNdKhSeUdyFPA"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"section\": {\n    \"name\": \"Indian Food\",\n    \"dimensions\": \"Width: 100px, Height: 300px\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{localhost}}/sections/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE3MzQ5NjUzMTN9.IhOo8P5tfTZDu7aMuAuTMfssewQTqokNdKhSeUdyFPA"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{localhost}}/sections/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
