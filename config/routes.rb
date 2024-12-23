@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   post '/login', to: 'auth#login'
+  post '/user/role_change', to: 'users#change_role'
   
   resources :users, only: %i[create]
 
